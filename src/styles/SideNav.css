@@ -1,0 +1,36 @@
+.sidenav {
+    position: fixed;
+    display: inline;
+    width: 300px;
+    height: 100vh;
+    box-shadow: 0px 3px 6px #00000029;
+    opacity: 1;
+}
+
+.sidenav > img {
+    padding: 10px 45px 10px 45px;
+}
+
+.sidenav nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.sidenav-element {
+    display: flex;
+    margin: 20px 0 20px 20px;
+    background-color: #03AEEE;
+    padding: 15px;
+    border-radius: 25px 0 0 25px;
+}
+
+.sidenav-element img {
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.sidenav-element p {
+    margin-left: 10px;
+}

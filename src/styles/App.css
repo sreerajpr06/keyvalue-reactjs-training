@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans';
+}
+
+/* @import url('https://fonts.googleapis.com/css?family=Nunito Sans'); */
+
+
+main {
+    background-color: #FAFAFA;
+    width: calc(100% - 300px);
+    height: 100vh;
+    margin-left: 300px;
+}
+
+header {
+    height: 60px;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+
+.page {
+    display: flex;
+    height: calc(100vh - 60px);
+}

@@ -1,0 +1,17 @@
+.btn-submit, .btn-cancel{
+    margin: 20px 20px 20px 0;
+    width: 150px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.btn-submit {
+    color: #FFFFFF;
+    background-color: #03AEEE;
+    border: 0;
+}
+
+.btn-cancel {
+    background-color: #FFFFFF;
+    border: 1px solid #8A8C8F;
+}
