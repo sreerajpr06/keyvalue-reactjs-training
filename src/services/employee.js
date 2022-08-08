@@ -9,12 +9,13 @@ export const baseApi = createApi({
   endpoints: (builder) => ({
     getEmployees: builder.query({
       query: () => `employee`,
+      providesTags: ['employee']
     }),
     getEmployeeById: builder.query({
       query: (id) => `employee/${id}`,
     }),
     createEmployee: builder.mutation({
-      query: ({data}) => ({
+      query: (data) => ({
         url: 'employee',
         method: 'POST',
         body: data,
@@ -26,4 +27,4 @@ export const baseApi = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetEmployeesQuery, useGetEmployeeByIdQuery } = baseApi
+export const { useGetEmployeesQuery, useGetEmployeeByIdQuery, useCreateEmployeeMutation } = baseApi

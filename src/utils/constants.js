@@ -1,6 +1,9 @@
 export const labels = {
     name: 'Employee Name',
     id: 'Employee ID',
+    departmentId: 'Department ID',
+    username: 'Username',
+    password: 'Password',
     joinDate: 'Joining Date',
     role: 'Role',
     status: 'Status',

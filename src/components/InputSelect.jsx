@@ -7,8 +7,6 @@ const InputSelect = ({field, label, options, className, onChange}) => {
             <div className={className}>
                 <p>{label}</p>
                 <select 
-                    name="status" 
-                    id="status" 
                     onChange={(event) => onChange(field, event.target.value)}
                 >
                     {

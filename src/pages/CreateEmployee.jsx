@@ -7,10 +7,11 @@ import Header from "../components/Header";
 import { labels, options } from "../utils/constants";
 import "../styles/CreateEmployee.css"
 import SideNav from "../components/SideNav";
+import { useCreateEmployeeMutation } from "../services/employee";
 
 const CreateEmployee = () => {
     const navigate = useNavigate();
-
+    const [ createEmployee, {isLoading: createLoading} ] = useCreateEmployeeMutation();
     const [ employee, setEmployee ] = useState({});
 
     const onChange = (key, value) => {
@@ -21,7 +22,27 @@ const CreateEmployee = () => {
         })
     }
 
-    const onSubmit = () => {
+    const onSubmit = async () => {
+        const newEmp = {
+            name: employee.name,
+            departmentId: employee.departmentId,
+            username: employee.username,
+            password: employee.password,
+            joinDate: employee.joinDate,
+            role: employee.role,
+            status: employee.status,
+            experience: Number(employee.experience),
+            address: {
+                line1: employee.line1,
+                line2: employee.line2,
+                city: employee.city,
+                state: employee.state,
+                country: employee.country,
+                pin: employee.pin,
+            }
+        }
+        console.log(newEmp);
+        await createEmployee(newEmp)
         navigate('/')
     }
     const onCancel = () => {
@@ -31,6 +52,9 @@ const CreateEmployee = () => {
     useEffect(() => {
         setEmployee({
             name: '',
+            departmentId: '2bd76305-1962-4e66-b09a-fc4d014b544c',
+            username: '',
+            password: '',
             joinDate: '',
             role: '',
             status: '',
