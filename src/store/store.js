@@ -9,3 +9,5 @@ export const store = configureStore({
     [baseApi.reducerPath]: baseApi.reducer,
   },
 })
+
+setupListeners(store.dispatch);
