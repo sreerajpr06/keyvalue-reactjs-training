@@ -1,49 +1,56 @@
 // Need to use the React-specific entry point to import createApi
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 // Define a service using a base URL and expected endpoints
 export const baseApi = createApi({
-  reducerPath: 'baseApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/api/' }),
-  tagTypes: ['Employee'],
+  reducerPath: "baseApi",
+  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3000/api/" }),
+  tagTypes: ["Employee"],
+  refetchOnMountOrArgChange: true,
   endpoints: (builder) => ({
     getEmployees: builder.query({
       query: () => `employee`,
-      providesTags: ['Employee']
+      
+      providesTags: ["Employee"],
     }),
     getEmployeeById: builder.query({
       query: (id) => `employee/${id}`,
     }),
     createEmployee: builder.mutation({
       query: (data) => ({
-        url: 'employee',
-        method: 'POST',
+        url: "employee",
+        method: "POST",
         body: data,
       }),
-      invalidatesTags: ['Employee'],
     }),
     deleteEmployee: builder.mutation({
       query: (id) => ({
         url: `employee/${id}`,
-        method: 'DELETE',
+        method: "DELETE",
       }),
-      invalidatesTags: ['Employee'],
+      
+      invalidatesTags: ["Employee"],
     }),
     updateEmployee: builder.mutation({
-      query: ({id, data}) => {
-        console.log(id, data)
-        alert('yo')
-        return ({
+      query: ({ id, data }) => {
+        console.log(id, data);
+        alert("yo");
+        return {
           url: `employee/${id}`,
-          method: 'PUT',
+          method: "PUT",
           body: data,
-        })
+        };
       },
-      invalidatesTags: ['Employee'],
-    })
+    }),
   }),
-})
+});
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetEmployeesQuery, useGetEmployeeByIdQuery, useCreateEmployeeMutation, useDeleteEmployeeMutation, useUpdateEmployeeMutation } = baseApi
+export const {
+  useGetEmployeesQuery,
+  useGetEmployeeByIdQuery,
+  useCreateEmployeeMutation,
+  useDeleteEmployeeMutation,
+  useUpdateEmployeeMutation,
+} = baseApi;

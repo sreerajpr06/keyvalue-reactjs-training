@@ -14,18 +14,30 @@ export default function EmployeeList() {
   const { data: empData, error: empError, isLoading: empIsLoading } = useGetEmployeesQuery();
   const [ deleteEmployee, {isLoading: deleteLoading} ] = useDeleteEmployeeMutation();
 
-  const handleClick = (action, empId) => {
-    console.log(action, empId)
-    if(action === 'view'){
-      navigate(`/view/${empId}`)
-    }
-    else if(action === 'edit'){
-      navigate(`/edit/${empId}`)
-    }
-    else if(action === 'delete'){
-      deleteEmployee(empId);
-    }
+  const handleView = (empId) => {
+    navigate(`/view/${empId}`)
   }
+
+  const handleEdit = (empId) => {
+    navigate(`/edit/${empId}`)
+  }
+
+  const handleDelete = (empId) => {
+    deleteEmployee(empId)
+  }
+
+  // const handleClick = (action, empId) => {
+  //   console.log(action, empId)
+  //   if(action === 'view'){
+  //     navigate(`/view/${empId}`)
+  //   }
+  //   else if(action === 'edit'){
+  //     navigate(`/edit/${empId}`)
+  //   }
+  //   else if(action === 'delete'){
+  //     deleteEmployee(empId);
+  //   }
+  // }
 
   return (
     <>
@@ -49,23 +61,17 @@ export default function EmployeeList() {
                   className="emp-list-row-header"
                 />
                 {
-                  empData.data.map((emp) => {
-                    emp = {
-                      ...emp,
-                      action: {
-                        edit: <MdOutlineEdit />,
-                        delete: <RiDeleteBin6Line/>
-                      }
-                    }
-                    return(
-                      <ListRow 
+                  empData.data.map((emp) => (
+                    <ListRow 
                         fields={empListFields}
                         data={emp}
                         className="emp-list-row"
-                        handleClick={handleClick}
+                        // handleClick={handleClick}
+                        handleView={handleView}
+                        handleEdit={handleEdit}
+                        handleDelete={handleDelete}
                       />
-                    )
-                  })
+                  ))
                 }
               </>
             ) : null}
