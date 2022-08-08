@@ -1,10 +1,10 @@
 import "../styles/Button.css"
 
 const Button = (props) => {
-    const { label, className, handleClick } = props;
+    const { label, icon, className, handleClick } = props;
 
     return (
-        <button className={className} onClick={() => handleClick()}>{label}</button>
+        <button className={className} onClick={(event) => { event.stopPropagation(); handleClick()}}>{icon}{label}</button>
     )
 }
 

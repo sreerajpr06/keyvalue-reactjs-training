@@ -1,66 +1,76 @@
-import Button from "../components/Button"
-import { useNavigate } from "react-router-dom"
-import ListRow from "../components/ListRow";
+import * as React from 'react'
+import { RiDeleteBin6Line } from "react-icons/ri"
+import { MdOutlineEdit } from "react-icons/md"
+import { useNavigate } from 'react-router-dom';
 
-const EmployeeList = () => {
-    const navigate = useNavigate();
+import ListRow from '../components/ListRow';
+import { useGetEmployeesQuery } from '../services/employee'
+import { empListFields, labels } from '../utils/constants';
+import SideNav from "../components/SideNav"
+import Header from '../components/Header';
 
-    const handleClick = () => {
-        navigate('/create')    
+export default function EmployeeList() {
+  const navigate = useNavigate();
+  const { data: empData, error: empError, isLoading: empIsLoading } = useGetEmployeesQuery();
+
+  const handleClick = (action, empId) => {
+    console.log(action, empId)
+    if(action === 'view'){
+      navigate(`/view/${empId}`)
     }
+    else if(action === 'edit'){
+      navigate(`/edit/${empId}`)
+    }
+    else if(action === 'delete'){
 
-    const employees = [
-        {
-            name: "abcd",
-            id: "abcd",
-            joinDate: "01/01/2020",
-            role: "developer",
-            status: "active",
-            experience: "2",
-        },
-        {
-            name: "xyz",
-            id: "xyz",
-            joinDate: "01/01/2020",
-            role: "developer",
-            status: "active",
-            experience: "2",
-        },
-        {
-            name: "qwer",
-            id: "qwer",
-            joinDate: "01/01/2020",
-            role: "developer",
-            status: "active",
-            experience: "2",
-        },
-        {
-            name: "asdf",
-            id: "asdf",
-            joinDate: "01/01/2020",
-            role: "developer",
-            status: "active",
-            experience: "2",
-        },
-    ]
+    }
+  }
 
-    return(
-        <>
-            <Button
-                label="Create Employee" 
-                handleClick={handleClick}
-            />
-            {
-                employees.map((emp) => {
+  return (
+    <>
+      <div className='page'>
+        <SideNav />
+        
+        <main>
+          <Header 
+            heading="Employee List"
+          />
+          <div className='container'>
+            {empError ? (
+              <>Oh no, there was an error</>
+            ) : empIsLoading ? (
+              <>Loading...</>
+            ) : empData ? (
+              <>
+                <ListRow 
+                  fields={empListFields}
+                  data={labels}
+                  className="emp-list-row-header"
+                />
+                {
+                  empData.data.map((emp) => {
+                    emp = {
+                      ...emp,
+                      action: {
+                        edit: <MdOutlineEdit />,
+                        delete: <RiDeleteBin6Line/>
+                      }
+                    }
                     return(
-                        <ListRow 
-                            employee={emp}
-                        />
+                      <ListRow 
+                        fields={empListFields}
+                        data={emp}
+                        className="emp-list-row"
+                        handleClick={handleClick}
+                      />
                     )
-                })
-            }
-        </>
-    )
+                  })
+                }
+              </>
+            ) : null}
+          </div>
+        </main>
+      </div>
+    </>
+  )
 }
-
-export default EmployeeList;

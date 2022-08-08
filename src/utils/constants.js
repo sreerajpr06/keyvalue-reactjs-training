@@ -5,7 +5,13 @@ export const labels = {
     role: 'Role',
     status: 'Status',
     experience: 'Experience',
-    address: 'Address'
+    line1: 'Address Line 1',
+    line2: 'Address Line 2',
+    city: 'City',
+    state: 'State',
+    country: 'Country',
+    pin: 'Pin',
+    action: 'Action',
 }
 
 export const options = {
@@ -41,3 +47,7 @@ export const options = {
         },
     ]
 }
+
+export const empListFields = [
+    'name', 'id', 'joinDate', 'role', 'status', 'experience', 'action'
+]

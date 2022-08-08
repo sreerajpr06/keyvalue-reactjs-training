@@ -15,3 +15,15 @@
     background-color: #FFFFFF;
     border: 1px solid #8A8C8F;
 }
+
+.emp-list-row-option-edit {
+    border: 0;
+    background-color: #FFFFFF;
+    color: #10AAC0;
+}
+
+.emp-list-row-option-delete {
+    border: 0;
+    background-color: #FFFFFF;
+    color: #FA4242;
+}

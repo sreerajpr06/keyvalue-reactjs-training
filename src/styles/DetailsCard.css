@@ -1,0 +1,28 @@
+.emp-details-card {
+    display: flex;
+    background-color: #FDFDFD;
+    box-shadow: 0px 3px 6px #9D9D9D29;
+    border-radius: 10px;
+    opacity: 1;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.details-field {
+    display: flex;
+    flex: 1 0 15%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-direction: column;
+    margin-right: 1%;
+    margin-bottom: 10px;
+}
+
+.details-field-title {
+    color: #8B8D9D;
+}
+
+.details-field-content {
+    color: #434552;
+}

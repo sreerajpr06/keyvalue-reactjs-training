@@ -21,3 +21,7 @@ header {
     display: flex;
     height: calc(100vh - 60px);
 }
+
+.container {
+    margin: 20px;
+}

@@ -4,7 +4,7 @@ import Button from "../components/Button";
 import InputField from "../components/InputField";
 import InputSelect from "../components/InputSelect";
 import Header from "../components/Header";
-import { labels, options } from "../utils/Constants";
+import { labels, options } from "../utils/constants";
 import "../styles/CreateEmployee.css"
 import SideNav from "../components/SideNav";
 
@@ -31,12 +31,16 @@ const CreateEmployee = () => {
     useEffect(() => {
         setEmployee({
             name: '',
-            id: '',
             joinDate: '',
             role: '',
             status: '',
             experience: '',
-            address: '',
+            line1: '',
+            line2: '',
+            city: '',
+            state: '',
+            country: '',
+            pin: '',
         })
     }, [])
 
