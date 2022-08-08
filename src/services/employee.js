@@ -21,10 +21,17 @@ export const baseApi = createApi({
         body: data,
       }),
       invalidatesTags: ['employee'],
-    })
+    }),
+    deleteEmployee: builder.mutation({
+      query: (id) => ({
+        url: `employee/${id}`,
+        method: 'DELETE',
+      }),
+      invalidatesTags: ['employee'],
+    }),
   }),
 })
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetEmployeesQuery, useGetEmployeeByIdQuery, useCreateEmployeeMutation } = baseApi
+export const { useGetEmployeesQuery, useGetEmployeeByIdQuery, useCreateEmployeeMutation, useDeleteEmployeeMutation } = baseApi
