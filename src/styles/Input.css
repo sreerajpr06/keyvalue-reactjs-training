@@ -1,3 +1,17 @@
+.login-input-field{
+    width: 40%;
+}
+
+.login-input-field input[type=text]{
+    width: 100%;
+    height: 45px;
+    display: inline-block;
+    border: 1px solid #B4B7BD;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #FAFAFA;
+    margin: 15px 0;
+}
 
 .form-element {
     width: calc(100% / 3);

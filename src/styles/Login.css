@@ -1,0 +1,14 @@
+.flex-col-2-container {
+    display: flex;
+    height: 100vh;
+}
+
+.flex-col-2-el{
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
