@@ -50,7 +50,7 @@ export default function EmployeeDetails() {
               <>
                 {
 										<DetailsCard 
-											data={empData.data}
+											data={employee}
 											fields={labels}
 											className="emp-details-card"
 										/>
