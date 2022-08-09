@@ -26,18 +26,9 @@ export default function EmployeeList() {
     deleteEmployee(empId)
   }
 
-  // const handleClick = (action, empId) => {
-  //   console.log(action, empId)
-  //   if(action === 'view'){
-  //     navigate(`/view/${empId}`)
-  //   }
-  //   else if(action === 'edit'){
-  //     navigate(`/edit/${empId}`)
-  //   }
-  //   else if(action === 'delete'){
-  //     deleteEmployee(empId);
-  //   }
-  // }
+  const handleHeaderClick = () => {
+    navigate("/create")
+  }
 
   return (
     <>
@@ -47,6 +38,11 @@ export default function EmployeeList() {
         <main>
           <Header 
             heading="Employee List"
+            button={{
+              label: "+",
+              className: "btn-header-create",
+              handleClick: handleHeaderClick
+            }}
           />
           <div className='container'>
             {empError ? (

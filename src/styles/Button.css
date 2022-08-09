@@ -8,6 +8,60 @@
     border-radius: 3px;
 }
 
+.btn-header-create {
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    padding: 0;
+    border: 0;
+    background-color: #03AEEE;
+    color: #FFFFFF;
+
+    position: relative;
+    z-index: 1;
+}
+.btn-header-create::after {
+    content: "Create employee";
+    padding: 5px 20px;
+    border-radius: 50px;
+    white-space: nowrap;
+    font-size: 16px;
+    background-color: #EAF9FF;
+    color: #1F1F1F;
+    margin-right: 200px;
+    position: absolute;
+    z-index: -1;
+}
+
+.btn-header-edit {
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    padding: 0;
+    border: 0;
+    background-color: #03AEEE;
+    color: #FFFFFF;
+
+    position: relative;
+    z-index: 1;
+}
+.btn-header-edit::after {
+    content: "Edit";
+    padding: 5px 20px;
+    border-radius: 50px;
+    white-space: nowrap;
+    font-size: 16px;
+    background-color: #EAF9FF;
+    color: #1F1F1F;
+    margin-right: 200px;
+    position: absolute;
+    z-index: -1;
+}
+
 .btn-submit, .btn-cancel{
     margin: 20px 20px 20px 0;
     width: 150px;
