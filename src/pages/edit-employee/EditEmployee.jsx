@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Button from "../components/Button";
-import InputField from "../components/InputField";
-import InputSelect from "../components/InputSelect";
-import Header from "../components/Header";
+import Button from "../../components/button/Button";
+import InputField from "../../components/input/InputField";
+import InputSelect from "../../components/input/InputSelect";
+import Header from "../../components/header/Header";
 
-import { labels, options } from "../utils/constants";
-// import "../styles/EditEmployee.css"
-import SideNav from "../components/SideNav";
-import { useGetEmployeeByIdQuery, useUpdateEmployeeMutation } from "../services/employee";
+import { labels, options } from "../../utils/constants";
+import SideNav from "../../components/side-nav/SideNav";
+import { useGetEmployeeByIdQuery, useUpdateEmployeeMutation } from "../../services/employee";
 
 const EditEmployee = () => {
   const navigate = useNavigate();
@@ -24,7 +23,7 @@ const EditEmployee = () => {
 
   useEffect(() => {
     if(empData){
-      setEmployee((current) => {
+      setEmployee(() => {
         const { address, 
           name,  
           departmentId,
@@ -62,10 +61,6 @@ const EditEmployee = () => {
       })
     }
   }, [empData])
-
-  // useEffect(() => {
-  //   console.log(employee)
-  // }, [employee])
 
   const onChange = (key, value) => {
     console.log(key, value);

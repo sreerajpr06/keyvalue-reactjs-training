@@ -1,10 +1,10 @@
 import './styles/App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import EmployeeList from './pages/EmployeeList';
-import CreateEmployee from './pages/CreateEmployee';
-import EmployeeDetails from './pages/EmployeeDetails';
-import EditEmployee from './pages/EditEmployee'
-import Login from './pages/Login';
+import EmployeeList from './pages/employee-list/EmployeeList';
+import CreateEmployee from './pages/create-employee/CreateEmployee';
+import EmployeeDetails from './pages/employee-details/EmployeeDetails';
+import EditEmployee from './pages/edit-employee/EditEmployee'
+import Login from './pages/login/Login';
 
 function App() {
   return (

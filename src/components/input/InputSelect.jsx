@@ -1,4 +1,4 @@
-import "../styles/Input.css"
+import "./Input.css"
 
 const InputSelect = ({field, label, options, className, onChange}) => {
     console.log(field)

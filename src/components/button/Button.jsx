@@ -1,4 +1,4 @@
-import "../styles/Button.css"
+import "./Button.css"
 
 const Button = (props) => {
     const { label, icon, className, handleClick } = props;

@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
 
-import { setStorage, getStorage } from "../services/utils";
-import { useLoginMutation } from "../services/employee";
-import Button from "../components/Button"
-import InputField from "../components/InputField";
-import loginImg from "../assets/login-img.png";
-import kvLogo from "../assets/kv logo.png"
-import "../styles/Login.css"
+import { setStorage } from "../../services/utils";
+import { useLoginMutation } from "../../services/employee";
+import Button from "../../components/button/Button"
+import InputField from "../../components/input/InputField";
+import loginImg from "../../assets/login-img.png";
+import kvLogo from "../../assets/kv logo.png"
+import "./Login.css"
 
 const Login = () => {
     const [ login, {isLoading: loginLoading} ] = useLoginMutation();

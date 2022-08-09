@@ -1,4 +1,4 @@
-import "../styles/DetailsCard.css"
+import "./DetailsCard.css"
 
 const DetailsCard = ({ data, fields, className }) => {
 

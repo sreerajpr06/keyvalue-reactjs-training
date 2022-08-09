@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Button from "../components/Button";
-import InputField from "../components/InputField";
-import InputSelect from "../components/InputSelect";
-import Header from "../components/Header";
-import { labels, options } from "../utils/constants";
-import "../styles/CreateEmployee.css"
-import SideNav from "../components/SideNav";
-import { useCreateEmployeeMutation } from "../services/employee";
+import Button from "../../components/button/Button";
+import InputField from "../../components/input/InputField";
+import InputSelect from "../../components/input/InputSelect";
+import Header from "../../components/header/Header";
+import { labels, options } from "../../utils/constants";
+import "./CreateEmployee.css"
+import SideNav from "../../components/side-nav/SideNav";
+import { useCreateEmployeeMutation } from "../../services/employee";
 
 const CreateEmployee = () => {
     const navigate = useNavigate();

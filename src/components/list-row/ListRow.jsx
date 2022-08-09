@@ -1,17 +1,14 @@
-import "../styles/ListRow.css"
-import Button from "./Button"
+import "./ListRow.css"
+import Button from "../button/Button"
 import { RiDeleteBin6Line } from "react-icons/ri"
 import { MdOutlineEdit } from "react-icons/md"
 
 const ListRow = ({data, handleView, handleEdit, handleDelete, fields, className}) => {
-    // console.log(data)
-    // console.log(fields)
     return(
         <>
             <div className={className} onClick={(event => handleView(data.id))}>
                 {
                     fields.map((key) => {
-                        {/* console.log(data[key]) */}
                         return(
                             <>
                                 {

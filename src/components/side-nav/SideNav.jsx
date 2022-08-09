@@ -1,6 +1,6 @@
-import "../styles/SideNav.css"
-import logo from '../assets/kv logo.png';
-import listImg from "../assets/List.png";
+import "./SideNav.css"
+import logo from '../../assets/kv logo.png';
+import listImg from "../../assets/List.png";
 
 const SideNav = () => {
     return (

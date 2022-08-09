@@ -1,4 +1,4 @@
-import "../styles/Input.css"
+import "./Input.css"
 
 const InputField = ({field, label, value, placeHolder, className, onChange}) => {
     return (

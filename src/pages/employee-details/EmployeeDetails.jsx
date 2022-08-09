@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { MdOutlineEdit } from "react-icons/md"
 
-import { useGetEmployeeByIdQuery } from '../services/employee'
-import { empListFields, labels } from '../utils/constants';
-import SideNav from "../components/SideNav"
-import Header from '../components/Header';
-import { useNavigate, useParams } from 'react-router-dom';
-import DetailsCard from '../components/DetailsCard';
+import { useGetEmployeeByIdQuery } from '../../services/employee'
+import { labels } from '../../utils/constants';
+import SideNav from "../../components/side-nav/SideNav"
+import Header from '../../components/header/Header';
+import DetailsCard from '../../components/details-card/DetailsCard';
 
 export default function EmployeeDetails() {
 	const { id: empId } = useParams();

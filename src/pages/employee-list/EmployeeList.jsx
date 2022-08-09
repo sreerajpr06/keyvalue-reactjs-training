@@ -1,13 +1,11 @@
 import * as React from 'react'
-import { RiDeleteBin6Line } from "react-icons/ri"
-import { MdOutlineEdit } from "react-icons/md"
 import { useNavigate } from 'react-router-dom';
 
-import ListRow from '../components/ListRow';
-import { useGetEmployeesQuery, useDeleteEmployeeMutation } from '../services/employee'
-import { empListFields, labels } from '../utils/constants';
-import SideNav from "../components/SideNav"
-import Header from '../components/Header';
+import ListRow from '../../components/list-row/ListRow';
+import { useGetEmployeesQuery, useDeleteEmployeeMutation } from '../../services/employee'
+import { empListFields, labels } from '../../utils/constants';
+import SideNav from "../../components/side-nav/SideNav"
+import Header from '../../components/header/Header';
 
 export default function EmployeeList() {
   const navigate = useNavigate();
